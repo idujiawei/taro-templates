@@ -50,7 +50,7 @@ const handler = {
     return { setPageName: `/src_admin/page/${pageName}/redux/reducer.js` };
   },
   "/src/api/api.js"({ pageName }) {
-    return { setPageName: `/src_admin/api/${pageName}.js` };
+    return { setPageName: `/api/${pageName}.js` };
   },
 };
 
