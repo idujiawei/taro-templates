@@ -14,13 +14,7 @@ import style from "./style/Form.scss";
 class <%= _.upperFirst(pageName) %>Form extends PureComponent {
   constructor(props) {
     super(props);
-    this.initDate();
   }
-
-  initDate = () => {
-    const planDate = moment().add(1, "day").format("YYYY-MM-DD");
-    this.props.update({ searchParams: { planDate } });
-  };
 
   // 改变当前的输入值
   onInputChange(values) {
@@ -41,7 +35,7 @@ class <%= _.upperFirst(pageName) %>Form extends PureComponent {
 
   // 重置
   reset = () => {
-    this.initDate();
+    this.props.update({ searchParams: {} });
   };
 
   render() {

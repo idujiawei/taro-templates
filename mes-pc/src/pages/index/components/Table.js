@@ -53,4 +53,4 @@ class <%= _.upperFirst(pageName) %>Table extends PureComponent {
     );
   }
 }
-export default withRouter(<%= _.upperFirst(pageName) %>Table);
+export default <%= _.upperFirst(pageName) %>Table;

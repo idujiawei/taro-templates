@@ -5,7 +5,7 @@ import { CommonTool } from "Common";
 import { mapDispatchToProps } from "../redux/mapDispatchToProps";
 
 @connect(
-  (state) => ({ ...state..<%= pageName %>, userLoation: state.userLoation }),
+  (state) => ({ ...state.<%= pageName %>, userLoation: state.userLoation }),
   mapDispatchToProps
 )
 class <%= _.upperFirst(pageName) %>Tool extends PureComponent {

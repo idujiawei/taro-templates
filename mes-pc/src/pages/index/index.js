@@ -22,13 +22,12 @@ class <%= _.upperFirst(pageName) %> extends PureComponent {
 
   render() {
     return (
-      <section>
+      <Fragment>
         <Bread route={['<%= pageName %>']} />
         <Form />
         <Tool />
-        <Tabs />
         <Table />
-      </section>
+      </Fragment>
     );
   }
 }
