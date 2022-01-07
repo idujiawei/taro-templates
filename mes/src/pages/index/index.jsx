@@ -4,13 +4,13 @@ import { View } from '@tarojs/components'
 import { observer, inject } from "mobx-react";
 import './index.<%= cssExt %>'
 
-const <%= _.capitalize(pageName) %> = () => {
+const <%= _.upperFirst(pageName) %> = () => {
 
   return (
-    <View className='<%= pageName %>'>
+    <View className='<%= _.snakeCase(pageName) %>'>
 
     </View>
   )
 }
 
-export default inject('<%= pageName %>Store')(observer(<%= _.capitalize(pageName) %>));
+export default inject('<%= pageName %>Store')(observer(<%= _.upperFirst(pageName) %>));
