@@ -31,7 +31,7 @@ const createHandler = (basePath) => {
         const dirPath = _.replace(item, /^\/(\w*)\/(.*)\.\w+$/, "$1");
         const filePath = _.replace(item, `/${dirPath}/`, `/${pageName}/`);
 
-        return { setPageName: `/src_admin/page${filePath}` };
+        return { setPageName: `/src/pages${filePath}` };
       },
     };
   }, {});
