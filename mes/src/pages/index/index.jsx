@@ -7,7 +7,7 @@ import './index.<%= cssExt %>'
 const <%= _.upperFirst(pageName) %> = () => {
 
   return (
-    <View className='<%= _.snakeCase(pageName) %>'>
+    <View className='<%= _.kebabCase(pageName) %>'>
 
     </View>
   )
