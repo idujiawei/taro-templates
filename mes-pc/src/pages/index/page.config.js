@@ -2,9 +2,9 @@ export default {
   router: [
     {
       exact: true,
-      path: '<%= pageName %>',
-      title: '<%= pageName %>',
+      path: "/mms/<%= pageName %>",
+      title: "<%= pageName %>",
     },
   ],
-  title: '<%= pageName %>',
+  title: "<%= pageName %>",
 };
