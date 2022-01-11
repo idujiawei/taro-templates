@@ -5,7 +5,6 @@ import { CsxMultipleSearch } from "Form";
 import { CommonFilter } from "Common";
 import { API_GET_PUBLIC_GOODS_CODE } from "api";
 import { mapDispatchToProps } from "../redux/mapDispatchToProps";
-import style from "./style/Form.scss";
 
 @connect(
   (state) => ({ ...state.<%= pageName %>, userLoation: state.userLoation }),
@@ -45,7 +44,6 @@ class <%= _.upperFirst(pageName) %>Form extends PureComponent {
     return (
       <CommonFilter
         hasMoreFilter
-        className={style.form}
         onQuery={this.query}
         onReset={this.reset}
       >
