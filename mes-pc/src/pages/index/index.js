@@ -4,6 +4,7 @@ import { Bread } from 'Bread';
 import Form from './components/Form';
 import Tool from './components/Tool';
 import Table from './components/Table';
+import pageConfig from './page.config';
 import { mapDispatchToProps } from './redux/mapDispatchToProps';
 
 @connect(
@@ -23,7 +24,7 @@ class <%= _.upperFirst(pageName) %> extends PureComponent {
   render() {
     return (
       <Fragment>
-        <Bread route={['<%= pageName %>']} />
+        <Bread route={[pageConfig.title]} />
         <Form />
         <Tool />
         <Table />

@@ -1,4 +1,4 @@
 // 错误
-export const <%= _.replace(_.upperCase(pageName), ' ', '_') %>_FAIL = '<%= _.replace(_.upperCase(pageName), ' ', '_') %>_FAIL';
+export const <%= _.replace(_.upperCase(pageName), /\s+/g, '_') %>_FAIL = '<%= _.replace(_.upperCase(pageName), /\s+/g, '_') %>_FAIL';
 // 更新
-export const <%= _.replace(_.upperCase(pageName), ' ', '_') %>_UPDATE = '<%= _.replace(_.upperCase(pageName), ' ', '_') %>_UPDATE';
+export const <%= _.replace(_.upperCase(pageName), /\s+/g, '_') %>_UPDATE = '<%= _.replace(_.upperCase(pageName), /\s+/g, '_') %>_UPDATE';

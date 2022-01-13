@@ -6,7 +6,7 @@ import * as actionType from "./actionType";
 //同步
 export const update = (object) => (dispatch) => {
   dispatch({
-    type: actionType.<%= _.replace(_.upperCase(pageName), ' ', '_') %>_UPDATE,
+    type: actionType.<%= _.replace(_.upperCase(pageName), /\s+/g, '_') %>_UPDATE,
     data: object,
   });
 };
@@ -40,7 +40,7 @@ export const handleGetList = (reqData) => (dispatch, getState) => {
     })
     .catch(() => {
       dispatch({
-        type: actionType.<%= _.replace(_.upperCase(pageName), ' ', '_') %>_FAIL,
+        type: actionType.<%= _.replace(_.upperCase(pageName), /\s+/g, '_') %>_FAIL,
       });
     });
 };
