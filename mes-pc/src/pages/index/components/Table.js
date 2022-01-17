@@ -25,8 +25,8 @@ class <%= _.upperFirst(pageName) %>Table extends PureComponent {
   }
 
   getData = ({ page = 1, size = this.props.size } = {}) => {
-    const { handleGetList, searchParams, tabActiveKey } = this.props;
-    handleGetList({ page, size, ...searchParams, tabType: tabActiveKey });
+    const { handleGetList, searchParams } = this.props;
+    handleGetList({ page, size, ...searchParams });
   };
 
   render() {
