@@ -15,7 +15,7 @@ const isArrVal = ["productCodeList"];
 const formatParams = (params) => formatQuery(params, isArrVal);
 
 // 获取列表
-export const handleGetList = (reqData) => (dispatch, getState) => {
+export const handleGetList = (reqData) => dispatch => {
   dispatch(update({ tableLoading: true }));
 
   const params = formatParams(reqData);
@@ -23,10 +23,7 @@ export const handleGetList = (reqData) => (dispatch, getState) => {
   getData({ api: API, data: params })
     .then((data) => {
       // 相应的逻辑判断
-      const { page, size, tabType } = reqData;
-      const {
-        rawRequisition: { updateFlag },
-      } = getState();
+      const { page, size } = reqData;
 
       dispatch(
         update({
