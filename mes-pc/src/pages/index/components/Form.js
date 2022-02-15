@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { Col, Input } from "antd";
-import { CsxMultipleSearch } from "Form";
+import { RaSelect } from 'radish';
 import { CommonFilter } from "Common";
 import { API_GET_PUBLIC_GOODS_CODE } from "api";
 import { mapDispatchToProps } from "../redux/mapDispatchToProps";
@@ -48,19 +48,29 @@ class <%= _.upperFirst(pageName) %>Form extends PureComponent {
         onReset={this.reset}
       >
         <Col span={8}>
-          <CsxMultipleSearch
-            dateApi={API_GET_PUBLIC_GOODS_CODE}
-            label="商品编码"
-            searchParamsKey="productCode"
-            selectItem={{
-              data: productCodeList,
-              key: "code",
-              valueKey: ["code", "name"],
-            }}
-            onChangeSelect={(data) => {
-              this.onInputChange({ productCodeList: data });
-            }}
-          />
+          <div className="commonInput ">
+            <label htmlFor="">商品编码：</label>
+            <div className="box ">
+              <RaSelect
+                allowClear
+                labelJoinValue
+                isSearchEmpty={false}
+                isDefaultTriggerChange={false}
+                requestUrl={API_GET_PUBLIC_GOODS_CODE.url}
+                reqOptions={API_GET_PUBLIC_GOODS_CODE.config}
+                getPopupContainer={() => document.body}
+                value={productCodeList}
+                searchKey="productCode"
+                valueField="code"
+                labelField="name"
+                labelJoinValueSeparator=" "
+                mode="multiple"
+                onChange={value => {
+                  this.onInputChange({ productCodeList: value });
+                }}
+              />
+            </div>
+          </div>
         </Col>
 
         <Col span={8}>

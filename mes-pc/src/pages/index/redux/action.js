@@ -11,8 +11,7 @@ export const update = (object) => (dispatch) => {
   });
 };
 
-const isArrVal = ["productCodeList"];
-const formatParams = (params) => formatQuery(params, isArrVal);
+const formatParams = (params) => formatQuery(params);
 
 // 获取列表
 export const handleGetList = (reqData) => dispatch => {
